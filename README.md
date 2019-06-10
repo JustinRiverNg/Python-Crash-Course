@@ -1,0 +1,1 @@
+This file contains all my notes as I went through "Python Crash Course" by Eric Matthes. Contained are many examples of code for different concepts addressed in the book.
