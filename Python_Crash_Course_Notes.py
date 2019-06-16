@@ -166,5 +166,55 @@ def get_formatted_name(first_name, last_name, middle_name = ""):
 	return full_name.title()
 print(get_formatted_name('Justin', 'Ng', 'River'))
 
+# Car Class
+class Car():
+	"""A simple attempt to represent a car."""
+	def __init__(self, make, model, year):
+		"""Initialize attributes to describe a car."""
+		self.make = make
+		self.model = model
+		self.year = year
+		self.odometer_reading = 0
+	def get_descriptive_name(self):
+		"""Return a neatly formatted descriptive name."""
+		long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+		return long_name.title()
+	def read_odometer(self):
+		"""Prints a statement showing the car's mileage"""
+		print("This car has " + str(self.odometer_reading) + " miles on it.")
+	def increment_odometer(self, miles):
+		"""Add the given amount to the odometer reading."""
+		self.odometer_reading += miles
+my_car = Car('Audi', 'A4', 2016)
+print(my_car.get_descriptive_name())
+my_car.read_odometer()
+my_car.increment_odometer(20)
+my_car.read_odometer()
+print()
+
+# Class ElectricCar created through inheritance. A child class "ElectricCar"
+# will inherit the methods and attributes of the parent class "Car"
+class ElectricCar(Car):
+	"""Represent asepcs of a car, specific to electric vehicles."""
+	def __init__(self, make, model, year):
+		"""Initialize attributes of the parent class."""
+		super().__init__(make, model, year)
+		self.battery_size = 70
+	def describe_battery(self):
+		"""Print a statement describing the battery size."""
+		print("This car has a " + str(self.battery_size) + "-kwh battery.")
+my_tesla = ElectricCar("Tesla", "Model S", 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+
+
+
+
+
+
+
+
+
+
 
 
